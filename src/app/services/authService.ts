@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const authApi = axios.create({
-  baseURL: import.meta.env.VITE_HOST_API,
+  baseURL: import.meta.env.VITE_HOST_API ?? 'https://api.sigea.fun',
   timeout: 10_000,
 });
 

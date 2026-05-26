@@ -92,11 +92,11 @@ export function ReservationsTable() {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-md p-6">
+    <div className="bg-white dark:bg-zinc-900 rounded-xl shadow-md p-6">
       <div className="flex flex-col gap-4 mb-6 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <h2 className="text-2xl font-bold text-[#1f3c68]">Reservas Recentes</h2>
-          <p className="text-sm text-gray-500 mt-1">{lastSyncLabel}</p>
+          <p className="text-sm text-gray-500 dark:text-zinc-400 mt-1">{lastSyncLabel}</p>
         </div>
 
         <div className="flex items-center gap-3 flex-wrap">
@@ -114,44 +114,44 @@ export function ReservationsTable() {
       </div>
 
       {dataSource === 'default' && !loadingReservations && (
-        <div className="mb-5 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800 flex items-center gap-2">
+        <div className="mb-5 rounded-lg border border-amber-200 dark:border-amber-700 bg-amber-50 dark:bg-amber-900/20 px-3 py-2 text-sm text-amber-800 dark:text-amber-300 flex items-center gap-2">
           <AlertCircle className="w-4 h-4" />
           API indisponivel no momento. Exibindo valores padrao automaticamente.
         </div>
       )}
 
       <div className="mb-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
-        <div className="rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
-          <p className="text-xs uppercase tracking-wide text-gray-500">Total de reservas</p>
-          <p className="text-2xl font-bold text-[#1f3c68] mt-1">{reservationSummary.total}</p>
-          <p className="text-xs text-gray-500 mt-1">No recorte exibido</p>
+        <div className="rounded-lg border border-gray-200 dark:border-zinc-700 bg-gray-50 dark:bg-zinc-800 px-4 py-3">
+          <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-zinc-400">Total de reservas</p>
+          <p className="text-2xl font-bold text-[#1f3c68] dark:text-blue-300 mt-1">{reservationSummary.total}</p>
+          <p className="text-xs text-gray-500 dark:text-zinc-500 mt-1">No recorte exibido</p>
         </div>
 
-        <div className="rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3">
+        <div className="rounded-lg border border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-900/20 px-4 py-3">
           <div className="flex items-center justify-between">
-            <p className="text-xs uppercase tracking-wide text-emerald-700">Ativas</p>
-            <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+            <p className="text-xs uppercase tracking-wide text-emerald-700 dark:text-emerald-400">Ativas</p>
+            <CheckCircle2 className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
           </div>
-          <p className="text-2xl font-bold text-emerald-700 mt-1">{reservationSummary.active}</p>
-          <p className="text-xs text-emerald-700/80 mt-1">Em andamento ou futuras</p>
+          <p className="text-2xl font-bold text-emerald-700 dark:text-emerald-400 mt-1">{reservationSummary.active}</p>
+          <p className="text-xs text-emerald-700/80 dark:text-emerald-500 mt-1">Em andamento ou futuras</p>
         </div>
 
-        <div className="rounded-lg border border-blue-200 bg-blue-50 px-4 py-3">
+        <div className="rounded-lg border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900/20 px-4 py-3">
           <div className="flex items-center justify-between">
-            <p className="text-xs uppercase tracking-wide text-blue-700">Concluidas</p>
-            <BarChart3 className="w-4 h-4 text-blue-700" />
+            <p className="text-xs uppercase tracking-wide text-blue-700 dark:text-blue-400">Concluidas</p>
+            <BarChart3 className="w-4 h-4 text-blue-700 dark:text-blue-400" />
           </div>
-          <p className="text-2xl font-bold text-blue-700 mt-1">{reservationSummary.completed}</p>
-          <p className="text-xs text-blue-700/80 mt-1">Historico recente</p>
+          <p className="text-2xl font-bold text-blue-700 dark:text-blue-400 mt-1">{reservationSummary.completed}</p>
+          <p className="text-xs text-blue-700/80 dark:text-blue-500 mt-1">Historico recente</p>
         </div>
 
-        <div className="rounded-lg border border-rose-200 bg-rose-50 px-4 py-3">
+        <div className="rounded-lg border border-rose-200 dark:border-rose-800 bg-rose-50 dark:bg-rose-900/20 px-4 py-3">
           <div className="flex items-center justify-between">
-            <p className="text-xs uppercase tracking-wide text-rose-700">Canceladas</p>
-            <XCircle className="w-4 h-4 text-rose-700" />
+            <p className="text-xs uppercase tracking-wide text-rose-700 dark:text-rose-400">Canceladas</p>
+            <XCircle className="w-4 h-4 text-rose-700 dark:text-rose-400" />
           </div>
-          <p className="text-2xl font-bold text-rose-700 mt-1">{reservationSummary.canceled}</p>
-          <p className="text-xs text-rose-700/80 mt-1">Demandas com replanejamento</p>
+          <p className="text-2xl font-bold text-rose-700 dark:text-rose-400 mt-1">{reservationSummary.canceled}</p>
+          <p className="text-xs text-rose-700/80 dark:text-rose-500 mt-1">Demandas com replanejamento</p>
         </div>
       </div>
 
@@ -205,10 +205,10 @@ export function ReservationsTable() {
       </div>
 
       {/* Table */}
-      <div className="border rounded-lg overflow-hidden">
+      <div className="border dark:border-zinc-700 rounded-lg overflow-hidden">
         <Table>
           <TableHeader>
-            <TableRow className="bg-gray-50">
+            <TableRow className="bg-gray-50 dark:bg-zinc-800">
               <TableHead className="font-semibold">Sala</TableHead>
               <TableHead className="font-semibold">Data</TableHead>
               <TableHead className="font-semibold">Horário</TableHead>
@@ -225,7 +225,7 @@ export function ReservationsTable() {
                   <TableCell>{reservation.time}</TableCell>
                   <TableCell>
                     <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 bg-[#dbe8f9] text-[#1f3c68] rounded-full flex items-center justify-center text-xs font-bold">
+                      <div className="w-8 h-8 bg-[#dbe8f9] dark:bg-blue-800 text-[#1f3c68] dark:text-blue-200 rounded-full flex items-center justify-center text-xs font-bold">
                         {reservation.avatar}
                       </div>
                       <span>{reservation.responsible}</span>
@@ -238,7 +238,7 @@ export function ReservationsTable() {
               ))
             ) : (
               <TableRow>
-                <TableCell colSpan={5} className="h-16 text-center text-gray-500">
+                <TableCell colSpan={5} className="h-16 text-center text-gray-500 dark:text-zinc-400">
                   Nenhuma reserva recente encontrada.
                 </TableCell>
               </TableRow>
@@ -248,53 +248,53 @@ export function ReservationsTable() {
       </div>
 
       <div className="mt-6 grid grid-cols-1 xl:grid-cols-2 gap-4">
-        <div className="rounded-lg border border-gray-200 bg-white p-4">
+        <div className="rounded-lg border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-4">
           <div className="flex items-center gap-2 mb-3">
-            <Clock3 className="w-4 h-4 text-[#1f3c68]" />
-            <h3 className="text-sm font-semibold text-[#1f3c68]">Proximas reservas ativas</h3>
+            <Clock3 className="w-4 h-4 text-[#1f3c68] dark:text-blue-400" />
+            <h3 className="text-sm font-semibold text-[#1f3c68] dark:text-blue-300">Proximas reservas ativas</h3>
           </div>
 
           {upcomingAgenda.length > 0 ? (
             <div className="space-y-2">
               {upcomingAgenda.map((reservation) => (
-                <div key={`agenda-${reservation.id}`} className="flex items-center justify-between rounded-md border border-gray-100 bg-gray-50 px-3 py-2">
+                <div key={`agenda-${reservation.id}`} className="flex items-center justify-between rounded-md border border-gray-100 dark:border-zinc-700 bg-gray-50 dark:bg-zinc-900 px-3 py-2">
                   <div>
-                    <p className="text-sm font-medium text-gray-800">{reservation.room}</p>
-                    <p className="text-xs text-gray-500">{reservation.responsible}</p>
+                    <p className="text-sm font-medium text-gray-800 dark:text-zinc-200">{reservation.room}</p>
+                    <p className="text-xs text-gray-500 dark:text-zinc-400">{reservation.responsible}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm text-[#1f3c68] font-semibold">{reservation.time}</p>
-                    <p className="text-xs text-gray-500">{reservation.date}</p>
+                    <p className="text-sm text-[#1f3c68] dark:text-blue-300 font-semibold">{reservation.time}</p>
+                    <p className="text-xs text-gray-500 dark:text-zinc-400">{reservation.date}</p>
                   </div>
                 </div>
               ))}
             </div>
           ) : (
-            <p className="text-sm text-gray-500">Sem reservas ativas para o periodo atual.</p>
+            <p className="text-sm text-gray-500 dark:text-zinc-400">Sem reservas ativas para o periodo atual.</p>
           )}
         </div>
 
-        <div className="rounded-lg border border-gray-200 bg-white p-4">
+        <div className="rounded-lg border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-4">
           <div className="flex items-center gap-2 mb-3">
-            <BarChart3 className="w-4 h-4 text-[#1f3c68]" />
-            <h3 className="text-sm font-semibold text-[#1f3c68]">Resumo operacional do turno</h3>
+            <BarChart3 className="w-4 h-4 text-[#1f3c68] dark:text-blue-400" />
+            <h3 className="text-sm font-semibold text-[#1f3c68] dark:text-blue-300">Resumo operacional do turno</h3>
           </div>
 
-          <p className="text-sm text-gray-600 mb-3">
+          <p className="text-sm text-gray-600 dark:text-zinc-400 mb-3">
             Taxa estimada de ocupacao com base nas reservas ativas do recorte atual.
           </p>
 
-          <div className="h-2.5 rounded-full bg-gray-100 overflow-hidden mb-3">
+          <div className="h-2.5 rounded-full bg-gray-100 dark:bg-zinc-700 overflow-hidden mb-3">
             <div className="h-full bg-gradient-to-r from-[#1f5ea4] to-[#1f8c6d]" style={{ width: `${occupancyRate}%` }} />
           </div>
 
-          <p className="text-sm font-semibold text-[#1f3c68] mb-3">{occupancyRate}% de ocupacao prevista</p>
+          <p className="text-sm font-semibold text-[#1f3c68] dark:text-blue-300 mb-3">{occupancyRate}% de ocupacao prevista</p>
 
-          <div className="grid grid-cols-2 gap-3 text-xs text-gray-600">
-            <div className="rounded-md border border-gray-100 bg-gray-50 px-3 py-2">
+          <div className="grid grid-cols-2 gap-3 text-xs text-gray-600 dark:text-zinc-400">
+            <div className="rounded-md border border-gray-100 dark:border-zinc-700 bg-gray-50 dark:bg-zinc-900 px-3 py-2">
               Janela de pico: 10:00 - 12:00
             </div>
-            <div className="rounded-md border border-gray-100 bg-gray-50 px-3 py-2">
+            <div className="rounded-md border border-gray-100 dark:border-zinc-700 bg-gray-50 dark:bg-zinc-900 px-3 py-2">
               Tempo medio de uso: 1h30
             </div>
           </div>

@@ -81,9 +81,9 @@ export function RoomInfo({
 
   if (!roomId) {
     return (
-      <div className="bg-white rounded-xl shadow-md p-6">
+      <div className="bg-white dark:bg-zinc-900 rounded-xl shadow-md p-6">
         <h3 className="font-semibold text-lg mb-3 text-[#1f3c68]">Informações da Sala</h3>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-gray-500 dark:text-zinc-400">
           Clique em uma sala no mapa para visualizar e editar foto, descricao, localizacao e passos para chegar.
         </p>
       </div>
@@ -133,12 +133,12 @@ export function RoomInfo({
           <div className="space-y-3">
             <h4 className="font-bold text-2xl">{roomId}</h4>
             
-            <div className="flex items-center gap-2 text-gray-700">
+            <div className="flex items-center gap-2 text-gray-700 dark:text-zinc-300">
               <Users className="w-4 h-4" />
               <span className="text-sm">{roomCapacity} lugares</span>
             </div>
 
-            <div className="flex items-center gap-2 text-gray-700">
+            <div className="flex items-center gap-2 text-gray-700 dark:text-zinc-300">
               <Home className="w-4 h-4" />
               <span className="text-sm">{roomCategory}</span>
             </div>
@@ -156,15 +156,15 @@ export function RoomInfo({
         </div>
 
         {/* Reservations */}
-        <div className="border-t pt-6">
-          <h3 className="font-semibold text-base mb-4">Reservas Agendadas</h3>
+        <div className="border-t dark:border-zinc-700 pt-6">
+          <h3 className="font-semibold text-base mb-4 dark:text-zinc-200">Reservas Agendadas</h3>
 
           {roomReservations.length > 0 ? (
             <div className="space-y-3">
               {roomReservations.map((reservation, index) => (
                 <div
                   key={index}
-                  className="border rounded-lg p-4 bg-green-50 border-green-200"
+                  className="border rounded-lg p-4 bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800"
                 >
                   <div className="flex items-start gap-3">
                     <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0">
@@ -174,7 +174,7 @@ export function RoomInfo({
                       <div className="font-semibold text-sm">
                         {reservation.date}, {reservation.time}
                       </div>
-                      <div className="text-xs text-gray-600 mt-1">
+                      <div className="text-xs text-gray-600 dark:text-zinc-400 mt-1">
                         Reservado por: {reservation.user}
                       </div>
                     </div>
@@ -183,7 +183,7 @@ export function RoomInfo({
               ))}
             </div>
           ) : (
-            <p className="text-sm text-gray-500 mb-4">Nenhuma reserva agendada</p>
+            <p className="text-sm text-gray-500 dark:text-zinc-400 mb-4">Nenhuma reserva agendada</p>
           )}
 
           <NewReservationDialog
@@ -198,12 +198,12 @@ export function RoomInfo({
         </div>
 
         {/* Formulario de configuracao dinamica */}
-        <div className="border-t pt-6">
+        <div className="border-t dark:border-zinc-700 pt-6">
           <button
             type="button"
             onClick={() => setIsDetailsFormOpen(open => !open)}
             aria-expanded={isDetailsFormOpen}
-            className="w-full flex items-center justify-between rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-semibold text-[#1f3c68] hover:bg-gray-100 transition-colors"
+            className="w-full flex items-center justify-between rounded-lg border border-gray-200 dark:border-zinc-700 bg-gray-50 dark:bg-zinc-800 px-3 py-2 text-sm font-semibold text-[#1f3c68] dark:text-blue-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors"
           >
             <span>Detalhes dinamicos da sala</span>
             <ChevronDown
@@ -235,7 +235,7 @@ export function RoomInfo({
                 />
               </div>
 
-              <div className="rounded-lg overflow-hidden border bg-gray-50">
+              <div className="rounded-lg overflow-hidden border dark:border-zinc-700 bg-gray-50 dark:bg-zinc-800">
                 <ImageWithFallback
                   src={formData.photoUrl || DEFAULT_PHOTO}
                   alt={roomId}

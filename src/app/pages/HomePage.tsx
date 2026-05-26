@@ -60,7 +60,7 @@ export function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 dark:bg-zinc-950">
       <Header />
       <Navigation />
 
@@ -96,11 +96,11 @@ export function HomePage() {
         </div>
 
         {/* Filtros */}
-        <div className="bg-white rounded-xl shadow-md p-6 mb-8">
+        <div className="bg-white dark:bg-zinc-900 rounded-xl shadow-md p-6 mb-8">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
-              <Search className="w-5 h-5 text-gray-500" />
-              <span className="font-semibold text-gray-700">Encontre sua sala:</span>
+              <Search className="w-5 h-5 text-gray-500 dark:text-zinc-400" />
+              <span className="font-semibold text-gray-700 dark:text-zinc-300">Encontre sua sala:</span>
             </div>
 
             <div className="flex-1 max-w-xs">
@@ -138,7 +138,7 @@ export function HomePage() {
         {/* Mapa 2D */}
         <div className="mb-8">
           {loading ? (
-            <div className="bg-white rounded-xl shadow-md p-12 flex items-center justify-center text-gray-400 gap-3">
+            <div className="bg-white dark:bg-zinc-900 rounded-xl shadow-md p-12 flex items-center justify-center text-gray-400 dark:text-zinc-500 gap-3">
               <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
@@ -161,8 +161,8 @@ export function HomePage() {
         <div className="mb-8 grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card>
             <CardHeader>
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-2">
-                <MapPin className="w-6 h-6 text-blue-600" />
+              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-2">
+                <MapPin className="w-6 h-6 text-blue-600 dark:text-blue-400" />
               </div>
               <CardTitle>Localização Fácil</CardTitle>
               <CardDescription>
@@ -170,7 +170,7 @@ export function HomePage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-600 dark:text-zinc-400">
                 Cada sala possui uma imagem ilustrativa e um passo a passo de como chegar até lá.
               </p>
             </CardContent>
@@ -178,8 +178,8 @@ export function HomePage() {
 
           <Card>
             <CardHeader>
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-2">
-                <Search className="w-6 h-6 text-green-600" />
+              <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mb-2">
+                <Search className="w-6 h-6 text-green-600 dark:text-green-400" />
               </div>
               <CardTitle>Busca Rápida</CardTitle>
               <CardDescription>
@@ -187,7 +187,7 @@ export function HomePage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-600 dark:text-zinc-400">
                 Use os filtros para navegar rapidamente entre os diferentes blocos e andares do campus.
               </p>
             </CardContent>
@@ -195,8 +195,8 @@ export function HomePage() {
 
           <Card>
             <CardHeader>
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-2">
-                <Clock className="w-6 h-6 text-purple-600" />
+              <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-2">
+                <Clock className="w-6 h-6 text-purple-600 dark:text-purple-400" />
               </div>
               <CardTitle>Tempo Real</CardTitle>
               <CardDescription>
@@ -204,7 +204,7 @@ export function HomePage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-600 dark:text-zinc-400">
                 Veja em tempo real quais salas estão ocupadas ou disponíveis no momento.
               </p>
             </CardContent>
@@ -223,17 +223,17 @@ export function HomePage() {
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
-                <div className="flex justify-between items-center py-2 border-b">
-                  <span className="font-medium">Segunda a Sexta</span>
-                  <span className="text-gray-600">07:00 - 22:00</span>
+                <div className="flex justify-between items-center py-2 border-b dark:border-zinc-700">
+                  <span className="font-medium dark:text-zinc-200">Segunda a Sexta</span>
+                  <span className="text-gray-600 dark:text-zinc-400">07:00 - 22:00</span>
                 </div>
-                <div className="flex justify-between items-center py-2 border-b">
-                  <span className="font-medium">Sábado</span>
-                  <span className="text-gray-600">08:00 - 12:00</span>
+                <div className="flex justify-between items-center py-2 border-b dark:border-zinc-700">
+                  <span className="font-medium dark:text-zinc-200">Sábado</span>
+                  <span className="text-gray-600 dark:text-zinc-400">08:00 - 12:00</span>
                 </div>
                 <div className="flex justify-between items-center py-2">
-                  <span className="font-medium">Domingo</span>
-                  <span className="text-gray-600">Fechado</span>
+                  <span className="font-medium dark:text-zinc-200">Domingo</span>
+                  <span className="text-gray-600 dark:text-zinc-400">Fechado</span>
                 </div>
               </div>
             </CardContent>
@@ -250,30 +250,30 @@ export function HomePage() {
             <CardContent>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-blue-600" />
+                  <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                    <Phone className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium">Secretaria</p>
-                    <p className="text-sm text-gray-600">(67) 3234-5678</p>
+                    <p className="text-sm font-medium dark:text-zinc-200">Secretaria</p>
+                    <p className="text-sm text-gray-600 dark:text-zinc-400">(67) 3234-5678</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                    <Mail className="w-5 h-5 text-green-600" />
+                  <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center">
+                    <Mail className="w-5 h-5 text-green-600 dark:text-green-400" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium">E-mail</p>
-                    <p className="text-sm text-gray-600">contato@ifms.edu.br</p>
+                    <p className="text-sm font-medium dark:text-zinc-200">E-mail</p>
+                    <p className="text-sm text-gray-600 dark:text-zinc-400">contato@ifms.edu.br</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                    <MapPinned className="w-5 h-5 text-purple-600" />
+                  <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
+                    <MapPinned className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium">Endereço</p>
-                    <p className="text-sm text-gray-600">Av. Principal, 1234 - Centro</p>
+                    <p className="text-sm font-medium dark:text-zinc-200">Endereço</p>
+                    <p className="text-sm text-gray-600 dark:text-zinc-400">Av. Principal, 1234 - Centro</p>
                   </div>
                 </div>
               </div>
@@ -344,26 +344,26 @@ export function HomePage() {
 
         {/* Estatísticas do Campus */}
         <div className="mb-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="bg-white rounded-xl shadow-md p-6 text-center">
+          <div className="bg-white dark:bg-zinc-900 rounded-xl shadow-md p-6 text-center">
             <div className="text-3xl font-bold text-[#1f3c68] mb-2">3</div>
-            <div className="text-sm text-gray-600">Blocos</div>
+            <div className="text-sm text-gray-600 dark:text-zinc-400">Blocos</div>
           </div>
-          <div className="bg-white rounded-xl shadow-md p-6 text-center">
+          <div className="bg-white dark:bg-zinc-900 rounded-xl shadow-md p-6 text-center">
             <div className="text-3xl font-bold text-green-600 mb-2">48</div>
-            <div className="text-sm text-gray-600">Salas de Aula</div>
+            <div className="text-sm text-gray-600 dark:text-zinc-400">Salas de Aula</div>
           </div>
-          <div className="bg-white rounded-xl shadow-md p-6 text-center">
+          <div className="bg-white dark:bg-zinc-900 rounded-xl shadow-md p-6 text-center">
             <div className="text-3xl font-bold text-blue-600 mb-2">12</div>
-            <div className="text-sm text-gray-600">Laboratórios</div>
+            <div className="text-sm text-gray-600 dark:text-zinc-400">Laboratórios</div>
           </div>
-          <div className="bg-white rounded-xl shadow-md p-6 text-center">
+          <div className="bg-white dark:bg-zinc-900 rounded-xl shadow-md p-6 text-center">
             <div className="text-3xl font-bold text-purple-600 mb-2">6</div>
-            <div className="text-sm text-gray-600">Auditórios</div>
+            <div className="text-sm text-gray-600 dark:text-zinc-400">Auditórios</div>
           </div>
         </div>
 
         {/* Dicas para Calouros */}
-        <Card className="mb-8 bg-gradient-to-r from-green-50 to-blue-50 border-2 border-green-200">
+        <Card className="mb-8 bg-gradient-to-r from-green-50 to-blue-50 dark:from-zinc-900 dark:to-zinc-900 border-2 border-green-200 dark:border-zinc-700">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-2xl text-[#1f3c68]">
               <GraduationCap className="w-6 h-6" />
@@ -378,7 +378,7 @@ export function HomePage() {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Chegue com antecedência</h4>
-                  <p className="text-sm text-gray-600">Nos primeiros dias, chegue 15 minutos antes para se familiarizar com o caminho.</p>
+                  <p className="text-sm text-gray-600 dark:text-zinc-400">Nos primeiros dias, chegue 15 minutos antes para se familiarizar com o caminho.</p>
                 </div>
               </div>
               <div className="flex gap-3">
@@ -387,7 +387,7 @@ export function HomePage() {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Use o mapa interativo</h4>
-                  <p className="text-sm text-gray-600">Explore todas as salas antes das aulas começarem para não se perder.</p>
+                  <p className="text-sm text-gray-600 dark:text-zinc-400">Explore todas as salas antes das aulas começarem para não se perder.</p>
                 </div>
               </div>
               <div className="flex gap-3">
@@ -396,7 +396,7 @@ export function HomePage() {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Pontos de referência</h4>
-                  <p className="text-sm text-gray-600">Biblioteca fica no Bloco A, Cantina no térreo do Bloco B.</p>
+                  <p className="text-sm text-gray-600 dark:text-zinc-400">Biblioteca fica no Bloco A, Cantina no térreo do Bloco B.</p>
                 </div>
               </div>
               <div className="flex gap-3">
@@ -405,7 +405,7 @@ export function HomePage() {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Salve nos favoritos</h4>
-                  <p className="text-sm text-gray-600">Adicione este sistema aos favoritos do seu navegador para acesso rápido.</p>
+                  <p className="text-sm text-gray-600 dark:text-zinc-400">Adicione este sistema aos favoritos do seu navegador para acesso rápido.</p>
                 </div>
               </div>
             </div>
